@@ -1,43 +1,15 @@
-# predictive-modeling-assisted-adaptive-design
+# Predictive-Modeling–Assisted Interim Decision-Making
 
+Core code and an example for *Predictive-Modeling–Assisted Interim Decision-Making in Adaptive Trials with Censored Survival Outcomes*.
 
-This repository contains code for the implmentation in the paper
-**"Improving Interim Decision-Making: Predictive Modeling of Censored Survival Outcomes with Machine Learning."**.
+`implementation.py` contains the log-rank effect, conditional power, and five methods: Baseline, Weibull AFT, log-normal AFT, CQRNN, and Ye–Shao–Yi. `simulation_demo.ipynb` generates an interim dataset and displays their results. No external data are needed.
 
-The code implements the proposed method and provides a  demo.
-
-## Repository Structure
-
-```
-.
-├── environment.yml   # Conda environment configuration
-├── simulation_demo.ipynb        # Demonstration notebook for running the method
-└── Prediction_Assisted_CP_utils.py          # Utility functions used in the implementation
-```
-
-## Setup
-
-We recommend using **Conda** to reproduce the computational environment. Create the environment using:
+## Run
 
 ```bash
 conda env create -f environment.yml
-conda activate <environment_name>
+conda activate pai_public_core
+jupyter lab simulation_demo.ipynb
 ```
 
-## Running the Demo
-
-To run the demo:
-
-1. Launch Jupyter Notebook.
-2. Open `simulation_demo.ipynb`.
-3. Run the cells sequentially.
-
-## Notes
-
-* All data used in the paper are generated through simulation.
-* No external datasets are required.
-* The notebook demonstrates the core workflow used in the study.
-
-## Contact
-
-If you have questions about the code, please contact qingkai [dot] dong [at] uconn [dot] edu.
+Run the notebook cells in order. The example uses true HR=1, 140 interim events out of 200 final events (tau = 0.7), and seed=2026.
